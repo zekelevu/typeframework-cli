@@ -31,7 +31,7 @@ cmd.action(function() {
     exec(cmd, function(error, stdout, stderr) {
         util.puts(stdout);
         console.log('Installing dependencies...');
-        exec('npm install', function(error, stdout, stderr) {
+        exec('npm install --no-bin-links', function(error, stdout, stderr) {
             if (error) return util.puts(error);
             console.log('New app created!');
         });

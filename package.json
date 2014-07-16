@@ -1,6 +1,6 @@
 {
   "name": "typeframework-cli",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "The TypeFramework command line interface",
   "author": "Zeke Kievel <zeke.levu@gmail.com>",
   "license": "MIT",
@@ -27,7 +27,7 @@
   "dependencies": {
     "commander": "^2.2.0",
     "grunt-init": "^0.3.2",
-    "typeframework-generate-app": "^0.0.1"
+    "typeframework-generate-app": "^0.1.0"
   },
   "engines": {
     "node": ">= 0.10.0"

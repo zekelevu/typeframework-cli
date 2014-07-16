@@ -27,7 +27,7 @@ cmd.action(function() {
 
     var gruntInitPath = path.resolve(__dirname, '../node_modules/grunt-init/bin/grunt-init');
     var templatePath = path.resolve(__dirname, '../node_modules/typeframework-generate-app');
-    var cmd = gruntInitPath + ' ' + templatePath;
+    var cmd = 'node ' + gruntInitPath + ' ' + templatePath.replace(':', '\\:'); // escape colon for windows
     exec(cmd, function(error, stdout, stderr) {
         util.puts(stdout);
         console.log('Installing dependencies...');
@@ -43,7 +43,8 @@ cmd = program.command('start');
 cmd.unknownOption = NOOP;
 cmd.action(function() {
     var spawn = require('child_process').spawn;
-    var app = spawn('npm', ['start']);
+    var npm = process.platform == 'win32' ? 'npm.cmd' : 'npm';
+    var app = spawn(npm, ['start']);
     app.stdout.on('data', function (data) {
         util.print(data);
     });

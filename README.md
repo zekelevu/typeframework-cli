@@ -1,3 +1,3 @@
 # Overview
 
-The [TypeFramework](http://typeframework.org) command line interface.
+The [TypeFramework](http://typeframework.com) command line interface.

@@ -25,9 +25,9 @@
     "url": "https://github.com/zekelevu/typeframework-cli/issues"
   },
   "dependencies": {
-    "commander": "^2.2.0",
-    "grunt-init": "^0.3.2",
-    "typeframework-generate-app": "^0.1.0"
+    "commander": "~2.2.0",
+    "grunt-init": "~0.3.2",
+    "typeframework-generate-app": "~0.1.0"
   },
   "engines": {
     "node": ">= 0.10.0"

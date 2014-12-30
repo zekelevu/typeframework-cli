@@ -27,8 +27,9 @@ cmd.action(function() {
 
     var gruntInitPath = path.resolve(__dirname, '../node_modules/grunt-init/bin/grunt-init');
     var templatePath = path.resolve(__dirname, '../node_modules/typeframework-generate-app');
-    var cmd = 'node ' + gruntInitPath + ' ' + templatePath.replace(':', '\\:'); // escape colon for windows
+    var cmd = 'node "' + gruntInitPath + '" "' + templatePath.replace(':', '\\:') + '"'; // escape colon for windows
     exec(cmd, function(error, stdout, stderr) {
+        if (error) return util.puts(error);
         util.puts(stdout);
         console.log('Installing dependencies...');
         exec('npm install --no-bin-links', function(error, stdout, stderr) {
